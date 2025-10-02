@@ -13,13 +13,17 @@ void sleep_ms(int milliseconds) {//cross platform sleep function
 #else
     usleep(milliseconds * 1000);
 #endif
+// Color macros
+#define GREEN  "\x1b[32m"
+#define RESET  "\x1b[0m"
+
 }
 int main(){
-    printf("---------------INSTAHAX0R v0.6.4---------------\n\nEnter user to crack password: ");
+    printf(GREEN "---------------INSTAHAX0R v0.6.4---------------\n\n" RESET "Enter user to crack password: ");
     char* user = (char*)malloc(30);
     scanf("%s",user);
     sleep_ms(500);
-    printf("Brute forcing password for user %s\n",user);
+    printf(GREEN "Brute forcing password for user %s\n",user);
     sleep_ms(300);
     printf("initializing password cracker");fflush(stdout);
     for(int i=0;i<3;i++){
